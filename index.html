@@ -7,7 +7,10 @@
       function (ksa) {
         console.log('Accessed key system ' + name);
       }
-    );
+    ).catch(
+      function () {
+        console.log('Did not find key system ' + name);
+      });
   }
   
   window.addEventListener('load', (event) => {
