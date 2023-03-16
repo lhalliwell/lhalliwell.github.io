@@ -1,6 +1,9 @@
 <script>
   function tryKeySystem(name) {
-    navigator.requestMediaKeySystemAccess(name, []).then(
+    var config = [{initDataTypes: ['webm'],
+      videoCapabilities: [{contentType: 'video/webm; codecs="vp09.00.10.08"'}]}];
+    
+    navigator.requestMediaKeySystemAccess(name, config).then(
       function (ksa) {
         console.log('Accessed key system ' + name);
       }
