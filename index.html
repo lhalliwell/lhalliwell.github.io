@@ -5,10 +5,14 @@
     
     navigator.requestMediaKeySystemAccess(name, config).then(
       function (ksa) {
+        var x = document.getElementById(name + '-status');
+        x.style.backgroundColor = 'green';
         console.log('Accessed key system ' + name);
       }
     ).catch(
       function () {
+        var x = document.getElementById(name + '-status');
+        x.style.backgroundColor = 'red';
         console.log('Did not find key system ' + name);
       });
   }
@@ -24,4 +28,14 @@
 <body>
 <title>Testing</title>
 <p>1</p>
+  
+  <table>
+    <tr>
+      <td>Clearkey</td><td id='org.w3.clearkey-status'></td>
+    </tr><tr>
+      <td>PlayReady</td><td id='com.chromecast.playready-status'></td>
+    </tr><tr>
+      <td>Widevine</td><td id='com.widevine.alpha-status'></td>
+    </tr>
+  </table>
 </body>
