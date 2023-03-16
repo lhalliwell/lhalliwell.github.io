@@ -1,3 +1,18 @@
+<script>
+  function tryKeySystem(name) {
+    navigator.requestMediaKeySystemAccess(name, []).then(
+      function (ksa) {
+        console.log('Accessed key system ' + name);
+      }
+    );
+  }
+  
+  window.addEventListener('load', (event) => {
+    console.log('The page has fully loaded');
+    tryKeySystem('org.w3.clearkey');
+  });
+  
+</script>
 <body>
 <title>Testing</title>
 <p>123</p>
