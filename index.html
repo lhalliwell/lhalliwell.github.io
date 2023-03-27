@@ -1,7 +1,6 @@
 <script>
   function tryKeySystem(name) {
-    var config = [{initDataTypes: ['webm'],
-      videoCapabilities: [{contentType: 'video/mp4; codecs="avc1.4D401E"'}]}];
+    var config = [{videoCapabilities: [{contentType: 'video/mp4; codecs="avc1.4D401E"'}]}];
     
     navigator.requestMediaKeySystemAccess(name, config).then(
       function (ksa) {
